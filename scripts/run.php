@@ -1,4 +1,3 @@
-<?php //require_once realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "defines.php"; ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,16 +15,12 @@
         @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}
     </style>
 </head>
-<body>
-<div></div>
-<form method="post" action="scripts/run.php">
-    <input type="text" name="url">
-    <input type="submit">
-</form>
 
+<?php
+require_once realpath(dirname(__FILE__)) . '/..' . DIRECTORY_SEPARATOR  . "defines.php";
 
+$url = $_POST['url'];
+require_once (realpath(dirname(__FILE__) . "/../scripts/table.php"));
+require_once (realpath(dirname(__FILE__) . "/../scripts/c_file_exists.php"));
 
-</body>
-</html>
-
-
+//require_once SCRIPTS . DS . 'c_file_exists.php';

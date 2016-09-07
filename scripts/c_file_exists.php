@@ -1,6 +1,6 @@
 <?php
-//edit this for
-//checking for code 200 response
+
+require_once (realpath(dirname(__FILE__) . "/../scripts/arr_for_table_content.php"));
 function remoteFileExists($robotstxt){
     $curl = curl_init($robotstxt);
     curl_setopt($curl, CURLOPT_NOBODY, true);
@@ -15,31 +15,28 @@ function remoteFileExists($robotstxt){
 
     }
     curl_close($curl);
-    return $ret;
+    return array($ret, $statusCode);
 }
 
 //define URL
-$oururl = 'http://ceramica.noip.me/index.php?route=common/home';
+$oururl = $url;
 //parse URL
 $parsed = parse_url($oururl);
 //set url for robots.txt
 $robotstxt = "http://{$parsed['host']}/robots.txt";
 
 
-//сгенерируй html для вставки в таблицу
-//массив со значениями для вставки?
-///////////////////////////////////////
-
-
-
-
-//$exists = remoteFileExists("$robotstxt");
-//if($exists){
-//    $robottxt = file_get_contents("$robotstxt");
-//}else{
-//    $robottxt = "none";
-//}
-//
+$exists = remoteFileExists("$robotstxt");
+$check_code_response = $exists[0];
 //echo '<pre>';
-//echo $robottxt;
+//print_r($check_code_response);
 //echo '</pre>';
+
+if($check_code_response){
+    $robottxt = $arr[30];
+}else{
+    $robottxt = $arr[32];
+}
+
+//return array ($robottxt , $exists[1]);
+
