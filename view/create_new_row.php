@@ -1,6 +1,9 @@
 <?php
-require_once (realpath(dirname(__FILE__) . "/../scripts/arr_for_table_content.php"));
-require_once (realpath(dirname(__FILE__) . "/../scripts/c_file_exists.php"));
+require_once SCRIPTS . 'arr_for_table_content.php';
+
+require_once SCRIPTS . 'c_file_exists.php';
+
+
 echo '<tr>';
 echo '<td class="tg-s6z2" rowspan="2">1</td>';
 echo '<td class="tg-s6z2" rowspan="2">' . $arr[5] . '</td>';

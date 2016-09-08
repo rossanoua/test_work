@@ -1,6 +1,6 @@
 <?php
 
-require_once (realpath(dirname(__FILE__) . "/../scripts/arr_for_table_content.php"));
+require_once SCRIPTS . 'arr_for_table_content.php';
 function remoteFileExists($robotstxt){
     $curl = curl_init($robotstxt);
     curl_setopt($curl, CURLOPT_NOBODY, true);

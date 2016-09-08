@@ -14,5 +14,5 @@ echo '<th class="tg-ci37">Статус</th>';
 echo '<th class="tg-ci37" colspan="2">Текущее состояние</th>';
 echo '</tr>';
 ?>
-<?php    require_once (realpath(dirname(__FILE__) . "/../scripts/create_new_row.php"));?>
+<?php    require_once VIEW . 'create_new_row.php';?>
 <?php echo '</table></div>';?>
