@@ -1,25 +1,27 @@
 <?php
-require_once SCRIPTS . 'arr_for_table_content.php';
+$arrayCheckCodeResponse = array();
+$globalArray = array();
 
 require_once SCRIPTS . 'c_file_exists.php';
 
+$globalArray[] = $arrayCheckCodeResponse;
 
-echo '<tr>';
-echo '<td class="tg-s6z2" rowspan="2">1</td>';
-echo '<td class="tg-s6z2" rowspan="2">' . $arr[5] . '</td>';
-if ($exists[0] == 200){
-    echo '<td class="tg-vkov" rowspan="2">' . $arr[6] . '</td>';
-}else {
-    echo '<td class="tg-vkov" rowspan="2" style="background-color: red; !important;">' . $arr[7] . '</td>';
+
+
+for ($i = 0; $i < count($globalArray); $i++) {
+
+        $j = 0;
+        echo '<tr>';
+        echo '<td class="tg-s6z2" rowspan="2">' . $globalArray[$i][$j] . '</td>';
+        echo '<td class="tg-s6z2" rowspan="2">' . $globalArray[$i][$j+1] . '</td>';
+        echo $globalArray[$i][$j+2];
+        echo '<td class="tg-s6z2">' . $globalArray[$i][$j+3] . '</td>'; // состояние
+        echo '<td class="tg-s6z2">' . $globalArray[$i][$j+5] . '</td>';
+        echo '</tr>';
+        echo '<tr>';
+        echo '<td class="tg-yw4l">' . $globalArray[$i][$j+4] . '</td>'; //рекомендации
+        echo '<td class="tg-yw4l">' . $globalArray[$i][$j+6] . '</td>';
+        echo '</tr>';
 }
-echo '<td class="tg-s6z2">'. $arr[8] .'</td>'; // состояние
-echo '<td class="tg-s6z2">' . "$robottxt" . $exists[1] . '</td>';
-echo '</tr>';
-echo '<tr>';
-echo '<td class="tg-yw4l">' . $arr[9] . '</td>'; //рекомендации
-if ($exists[0] == 200){
-    echo '<td class="tg-yw4l">' . $arr[31] . '</td>';
-}else{
-    echo '<td class="tg-yw4l">' . $arr[33] . '</td>';
-}
-echo '</tr>';
+
+?>

@@ -1,6 +1,5 @@
 <?php
 
-require_once SCRIPTS . 'arr_for_table_content.php';
 function remoteFileExists($robotstxt){
     $curl = curl_init($robotstxt);
     curl_setopt($curl, CURLOPT_NOBODY, true);
@@ -25,18 +24,22 @@ $parsed = parse_url($oururl);
 //set url for robots.txt
 $robotstxt = "http://{$parsed['host']}/robots.txt";
 
-
 $exists = remoteFileExists("$robotstxt");
 $check_code_response = $exists[0];
-//echo '<pre>';
-//print_r($check_code_response);
-//echo '</pre>';
+$respondStatusCode = $exists[1];
 
 if($check_code_response){
-    $robottxt = $arr[30];
+    $arrayCheckCodeResponse['5'] = 'Файл robots.txt отдаёт код ответа сервера:' . $respondStatusCode;
+    $arrayCheckCodeResponse['2'] = '<td class="tg-vkov" rowspan="2">ОК</td>';
+    $arrayCheckCodeResponse['6'] = 'Доработки не требуются';
 }else{
-    $robottxt = $arr[32];
+    $arrayCheckCodeResponse['5'] = 'При обращении к файлу robots.txt сервер возвращает код ответа: ' . $respondStatusCode;
+    $arrayCheckCodeResponse['2'] = '<td class="tg-vkov" rowspan="2" style="background-color: red; !important;">Ошибка</td>';
+    $arrayCheckCodeResponse['6'] = 'Программист: Файл robots.txt должны отдавать код ответа 200, иначе файл не будет обрабатываться. Необходимо настроить сайт таким образом, чтобы при обращении к файлу robots.txt сервер возвращает код ответа 200';
 }
+$arrayCheckCodeResponse['0'] = '1' ;
+$arrayCheckCodeResponse['1'] = 'Проверка кода ответа сервера для файла robots.txt' ;
 
-//return array ($robottxt , $exists[1]);
+$arrayCheckCodeResponse['3'] = 'Состояние';
+$arrayCheckCodeResponse['4'] = 'Рекомендации';
 
