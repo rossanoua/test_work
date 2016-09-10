@@ -34,14 +34,14 @@ $arrayCheckCodeResponse[] = 'Проверка кода ответа сервер
 if($check_code_response){
     $arrayCheckCodeResponse[] = '<td class="tg-vkov" rowspan="2">ОК</td>';
     $arrayCheckCodeResponse[] = 'Состояние';
-    $arrayCheckCodeResponse[] = 'Рекомендации';
     $arrayCheckCodeResponse[] = 'Файл robots.txt отдаёт код ответа сервера:' . $respondStatusCode;
+    $arrayCheckCodeResponse[] = 'Рекомендации';
     $arrayCheckCodeResponse[] = 'Доработки не требуются';
 }else{
     $arrayCheckCodeResponse[] = '<td class="tg-vkov" rowspan="2" style="background-color: red; !important;">Ошибка</td>';
     $arrayCheckCodeResponse[] = 'Состояние';
-    $arrayCheckCodeResponse[] = 'Рекомендации';
     $arrayCheckCodeResponse[] = 'При обращении к файлу robots.txt сервер возвращает код ответа: ' . $respondStatusCode;
+    $arrayCheckCodeResponse[] = 'Рекомендации';
     $arrayCheckCodeResponse[] = 'Программист: Файл robots.txt должны отдавать код ответа 200, иначе файл не будет обрабатываться. Необходимо настроить сайт таким образом, чтобы при обращении к файлу robots.txt сервер возвращает код ответа 200';
 }
 

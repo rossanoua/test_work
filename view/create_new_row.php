@@ -1,9 +1,16 @@
 <?php
 $arrayCheckCodeResponse = array();
+$arrayCheckFileSize = array();
+$arrayIsRobotsTxtExists = array();
 $globalArray = array();
 
 require_once SCRIPTS . 'c_file_exists.php';
+require_once SCRIPTS . 'find_robots.php';
+require_once SCRIPTS . 'check_file_size.php';
 
+
+$globalArray[] = $arrayIsRobotsTxtExists;
+$globalArray[] = $arrayCheckFileSize;
 $globalArray[] = $arrayCheckCodeResponse;
 
 

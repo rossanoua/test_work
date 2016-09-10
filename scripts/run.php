@@ -1,7 +1,8 @@
 <?php require_once (realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . '../defines.php'));?>
 <?php
 if (!empty ($_POST)){
-    $url = $_POST['url'] ;
+    $url = $_POST['url'];
+    echo '<div class="h1"><h1>Ищем robots.txt по адресу: ' . $url . '/robots.txt</h1></div>';
     require_once VIEW . 'table.php';
     require_once SCRIPTS . 'c_file_exists.php';
     echo '<div>';
