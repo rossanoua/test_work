@@ -1,17 +1,41 @@
 <?php
 $arrayCheckCodeResponse = array();
+$arrayHostSet = array();
+$arrayHostCount = array();
 $arrayCheckFileSize = array();
+$arraySitemapSet = array();
 $arrayIsRobotsTxtExists = array();
 $globalArray = array();
 
 require_once SCRIPTS . 'c_file_exists.php';
+require_once SCRIPTS . 'hostsitemapcheck.php';
 require_once SCRIPTS . 'find_robots.php';
 require_once SCRIPTS . 'check_file_size.php';
 
 
-$globalArray[] = $arrayIsRobotsTxtExists;
-$globalArray[] = $arrayCheckFileSize;
-$globalArray[] = $arrayCheckCodeResponse;
+
+if($check_code_response) {
+        $globalArray[] = $arrayIsRobotsTxtExists;
+        if ($hostsetbool){
+                $globalArray[] = $arrayHostSet;
+                $globalArray[] = $arrayHostCount;
+                $globalArray[] = $arrayCheckFileSize;
+                $globalArray[] = $arraySitemapSet;
+                $globalArray[] = $arrayCheckCodeResponse;
+                
+        }else{
+                $globalArray[] = $arrayHostSet;
+                $globalArray[] = $arrayCheckFileSize;
+                $globalArray[] = $arraySitemapSet;
+                $globalArray[] = $arrayCheckCodeResponse;
+        }
+        
+}else{
+        $globalArray[] = $arrayIsRobotsTxtExists;
+        $globalArray[] = $arrayCheckCodeResponse;
+}
+
+
 
 
 
