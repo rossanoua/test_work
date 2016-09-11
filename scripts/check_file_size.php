@@ -16,7 +16,6 @@ function remote_filesize($robotstxt) {
 }
 
 $bytes =  remote_filesize($robotstxt);
-//echo 'Counted bytes is:' . remote_filesize($robotstxt) . '</br>';
 
 function formatSizeUnits($bytes)
 {
@@ -41,8 +40,7 @@ function formatSizeUnits($bytes)
 }
 
 $hrBytes = formatSizeUnits($bytes);
-//echo 'Human readable: ' . $hrBytes . '</br>';
-//echo $hrBytes . '</br>';
+
 
 $arrayCheckFileSize[] = 'Проверка размера файла robots.txt' ;
 
