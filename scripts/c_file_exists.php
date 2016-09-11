@@ -28,18 +28,20 @@ $exists = remoteFileExists("$robotstxt");
 $check_code_response = $exists[0];
 $respondStatusCode = $exists[1];
 
-if($check_code_response){
-    $arrayCheckCodeResponse['5'] = 'Файл robots.txt отдаёт код ответа сервера:' . $respondStatusCode;
-    $arrayCheckCodeResponse['2'] = '<td class="tg-vkov" rowspan="2">ОК</td>';
-    $arrayCheckCodeResponse['6'] = 'Доработки не требуются';
-}else{
-    $arrayCheckCodeResponse['5'] = 'При обращении к файлу robots.txt сервер возвращает код ответа: ' . $respondStatusCode;
-    $arrayCheckCodeResponse['2'] = '<td class="tg-vkov" rowspan="2" style="background-color: red; !important;">Ошибка</td>';
-    $arrayCheckCodeResponse['6'] = 'Программист: Файл robots.txt должны отдавать код ответа 200, иначе файл не будет обрабатываться. Необходимо настроить сайт таким образом, чтобы при обращении к файлу robots.txt сервер возвращает код ответа 200';
-}
-$arrayCheckCodeResponse['0'] = '1' ;
-$arrayCheckCodeResponse['1'] = 'Проверка кода ответа сервера для файла robots.txt' ;
+//$arrayCheckCodeResponse['0'] = '1' ;
+$arrayCheckCodeResponse[] = 'Проверка кода ответа сервера для файла robots.txt' ;
 
-$arrayCheckCodeResponse['3'] = 'Состояние';
-$arrayCheckCodeResponse['4'] = 'Рекомендации';
+if($check_code_response){
+    $arrayCheckCodeResponse[] = '<td class="tg-vkov" rowspan="2">ОК</td>';
+    $arrayCheckCodeResponse[] = 'Состояние';
+    $arrayCheckCodeResponse[] = 'Файл robots.txt отдаёт код ответа сервера:' . $respondStatusCode;
+    $arrayCheckCodeResponse[] = 'Рекомендации';
+    $arrayCheckCodeResponse[] = 'Доработки не требуются';
+}else{
+    $arrayCheckCodeResponse[] = '<td class="tg-vkov" rowspan="2" style="background-color: red; !important;">Ошибка</td>';
+    $arrayCheckCodeResponse[] = 'Состояние';
+    $arrayCheckCodeResponse[] = 'При обращении к файлу robots.txt сервер возвращает код ответа: ' . $respondStatusCode;
+    $arrayCheckCodeResponse[] = 'Рекомендации';
+    $arrayCheckCodeResponse[] = 'Программист: Файл robots.txt должны отдавать код ответа 200, иначе файл не будет обрабатываться. Необходимо настроить сайт таким образом, чтобы при обращении к файлу robots.txt сервер возвращает код ответа 200';
+}
 
