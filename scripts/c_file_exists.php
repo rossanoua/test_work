@@ -11,7 +11,6 @@ function remoteFileExists($robotstxt){
             $ret = true;
         }else
             $ret = false;
-
     }
     curl_close($curl);
     return array($ret, $statusCode);
