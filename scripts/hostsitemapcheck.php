@@ -1,7 +1,7 @@
 <?php
 require_once SCRIPTS . 'c_file_exists.php';
 
-function isHostSet ($robotstxt){
+function isHostSitemapSet ($robotstxt){
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $robotstxt);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -15,8 +15,8 @@ function isHostSet ($robotstxt){
 
     $str = strtolower($str);
 
-    $sitemapset = substr_count($str, 'sitemap:') . '</br>';
-    $hostset =  substr_count($str, 'host:') . '</br>';
+    $sitemapset = substr_count($str, 'sitemap:');
+    $hostset =  substr_count($str, 'host:');
 
     $hostsetbool = (boolean) $hostset;
     $sitemapsetbool = (boolean) $sitemapset;
@@ -24,10 +24,11 @@ function isHostSet ($robotstxt){
     return array($sitemapset, $hostset, $hostsetbool, $sitemapsetbool);
 }
 
+$arrayisHostSitemapSet = isHostSitemapSet($robotstxt);
 
 $arrayHostSet[] = 'Проверка указания директивы Host' ;
 
-if($hostsetbool){
+if($arrayisHostSitemapSet[2]){
     $arrayHostSet[] = '<td class="tg-vkov" rowspan="2">ОК</td>';
     $arrayHostSet[] = 'Состояние';
     $arrayHostSet[] = 'Директива Host указана';
@@ -43,7 +44,7 @@ if($hostsetbool){
 
 $arrayHostCount[] = 'Проверка количества директив Host, прописанных в файле' ;
 
-if($hostset == 1){
+if($arrayisHostSitemapSet[1] == 1){
     $arrayHostCount[] = '<td class="tg-vkov" rowspan="2">ОК</td>';
     $arrayHostCount[] = 'Состояние';
     $arrayHostCount[] = 'В файле прописана 1 директива Host';
@@ -60,7 +61,7 @@ if($hostset == 1){
 
 $arraySitemapSet[] = 'Проверка указания директивы Sitemap' ;
 
-if($sitemapsetbool){
+if($arrayisHostSitemapSet[3]){
     $arraySitemapSet[] = '<td class="tg-vkov" rowspan="2">ОК</td>';
     $arraySitemapSet[] = 'Состояние';
     $arraySitemapSet[] = 'Директива Sitemap указана';
