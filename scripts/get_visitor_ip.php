@@ -18,16 +18,21 @@ function getUserIP()
         $ip = $remote;
     }
 
-    return array($ip, time());
+    return $ip;
 }
 
 
 $user_ip = getUserIP();
-
+$log = 'New visitor at: ' . date("j.n.Y G:i") . ' with IP: ' . $user_ip.PHP_EOL;
 
 //$text = "Anything";
-$var_str = var_export($user_ip, true);
-$var = "<?php\n\n\$text = $var_str;\n\n?>";
+//$var_str = var_export($user_ip, true);
+//$var = "<?php\n\n\$text = $var_str;\n\n?/>";//
 
-file_put_contents('filename.php', $var);
+
+file_put_contents('./logs/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+
+
+
+//file_put_contents('filename.php', $var);
 //echo $user_ip;
