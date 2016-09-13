@@ -1,5 +1,5 @@
 <?php require_once (realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'defines.php'));?>
-<?php require_once SCRIPTS . 'get_visitor_ip.php'; ?>
+<?php //require_once SCRIPTS . 'get_visitor_ip.php'; ?>
 <?php require_once VIEW . 'head.php'?>
 
 <body>
