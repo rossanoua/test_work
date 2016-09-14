@@ -55,6 +55,15 @@ form {
     -moz-border-radius:15px;
     border-radius:15px;
 }
+
+.a_robots {
+    padding: 15px;
+    margin: 20px;
+    float: right;
+    width: 500px;
+    height: auto;
+    border: 1px solid rebeccapurple;
+}
 @media screen and (max-width: 767px) {
     .tg {
         width: auto !important;
