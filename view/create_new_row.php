@@ -14,9 +14,9 @@ require_once SCRIPTS . 'check_file_size.php';
 
 
 
-if($check_code_response) {
+if($exists[0]) {
         $globalArray[] = $arrayIsRobotsTxtExists;
-        if ($hostsetbool){
+        if ($arrayisHostSitemapSet[2]){
                 $globalArray[] = $arrayHostSet;
                 $globalArray[] = $arrayHostCount;
                 $globalArray[] = $arrayCheckFileSize;
