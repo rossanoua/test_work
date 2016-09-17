@@ -62,7 +62,7 @@ form {
     float: right;
     width: 500px;
     height: auto;
-    border: 1px solid rebeccapurple;
+    /*border: 1px solid rebeccapurple;*/
 }
 @media screen and (max-width: 767px) {
     .tg {
