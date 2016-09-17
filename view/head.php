@@ -6,7 +6,7 @@
 
     <?php
     // Init
-    define( "DEBUGGING", true ); // or false in production enviroment
+    define( "DEBUGGING", true ); // or false in production environment
     // Functions
     function get_cache_prevent_string( $always = true ) {
         return (DEBUGGING || $always) ? date('_Y-m-d_H:i:s') : "";
