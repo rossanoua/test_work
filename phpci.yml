@@ -12,7 +12,7 @@ setup:
 
 test:
     copy_build:
-        directory: 
+        directory: "/home/rossano/test_work_testing"
     php_mess_detector:
         allow_failures: true
     php_code_sniffer:
