@@ -19,11 +19,11 @@ test:
 #    php_cpd:
 #        allow_failures: true
 
-failure:
-    email:
-        committer: true
-        default_mailto_address: raidho26@gmail.com
-
-#complete:
+#failure:
 #    email:
-#            default_mailto_address: raidho26@gmail.com
+#        committer: true
+#        default_mailto_address: raidho26@gmail.com
+
+complete:
+    email:
+            default_mailto_address: raidho26@gmail.com
