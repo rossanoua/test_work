@@ -24,6 +24,6 @@ test:
 #        committer: true
 #        default_mailto_address: raidho26@gmail.com
 
-complete:
-    email:
-            default_mailto_address: raidho26@gmail.com
+#complete:
+#    email:
+#            default_mailto_address: raidho26@gmail.com
