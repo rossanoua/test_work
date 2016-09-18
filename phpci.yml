@@ -1,5 +1,5 @@
 build_settings:
-    clone_depth: 1 # depth of 1 is a shallow clone, remove this line to clone entire repo
+#    clone_depth: 1 # depth of 1 is a shallow clone, remove this line to clone entire repo
     ignore:
         - "logs"
         - "vendor"
@@ -7,24 +7,24 @@ build_settings:
 
 
 setup:
-    composer:
-        action: "install"
+#    composer:
+#        action: "install"
 
 test:
-    copy_build:
-        directory: "/home/rossano/test_work_testing"
-    php_mess_detector:
-        allow_failures: true
-    php_code_sniffer:
-        standard: "PSR2"
-    php_cpd:
-        allow_failures: true
+#    copy_build:
+#        directory: /home/rossano/test_work_testing
+#    php_mess_detector:
+#        allow_failures: true
+#    php_code_sniffer:
+#        standard: "PSR2"
+#    php_cpd:
+#        allow_failures: true
 
 failure:
     email:
         committer: true
         default_mailto_address: raidho26@gmail.com
 
-complete:
-    email:
-            default_mailto_address: raidho26@gmail.com
+#complete:
+#    email:
+#            default_mailto_address: raidho26@gmail.com
