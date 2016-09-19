@@ -14,8 +14,12 @@ test:
         directory: /home/rossano/test_work_testing
 #    php_mess_detector:
 #        allow_failures: true
-    php_code_sniffer:
-        standard: "PSR2"
+    test:
+        php_code_sniffer:
+            path: "./"
+#            ignore:
+#                - "app/views"
+            standard: "PSR0,PSR1,PSR2"
 #    php_cpd:
 #        allow_failures: true
 
