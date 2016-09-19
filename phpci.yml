@@ -18,7 +18,7 @@ test:
         path: "./"
 #            ignore:
 #                - "app/views"
-        standard: "PSR0,PSR1,PSR2"
+        standard: "PSR1,PSR2"
 #    php_cpd:
 #        allow_failures: true
 
